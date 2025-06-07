@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <!-- fontawesome css -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- main css -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- media query css -->
+    <link rel="stylesheet" href="./css/media-query.css" />
+    <!-- browser icon -->
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
+    <!-- title -->
+    <title>Bookmarker by Bassem Al-Abyad</title>
+  </head>
+  <body>
+    <header>
+      <div class="d-flex justify-content-center">
+        <h1 class="text-center my-5 p-3 font-pacifico position-relative">
+          Bookmarker
+        </h1>
+      </div>
+    </header>
+          <hr />
+    <main>
+      <div class="w-75 mx-auto my-5">
+        <h2 class="text-center my-4 mx-auto w-50 font-righteous linear-gradient-text">
+          <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites
+          <i class="fa-solid fa-bookmark"></i>
+        </h2>
+      </div>
+
+      <div class="w-75 mx-auto my-5">
+        <h3 class="font-pt-sans-caption">
+          <i class="fa-solid fa-book-bookmark"></i> Site Name:
+        </h3>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Bookmark Name"
+            id="siteName"
+            oninput="checkValidity(this)"
+          />
+          <p class="alert alert-danger my-2 d-none">
+            This field requires 3-30
+            characters long, and no special characters like (!@#$%-_ etc).
+          </p>
+          <label for="siteName">Bookmark Name</label>
+        </div>
+        <h3 class="font-pt-sans-caption">
+          <i class="fa-solid fa-link"></i> Site URL:
+        </h3>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="https://example.com"
+            id="siteURL"
+            oninput="checkValidity(this)"
+          />
+          <p class="alert alert-danger my-2 d-none">
+            This field requires a valid URL. (ex. https://example.com or example.com)
+          </p>
+          <label for="siteURL">Site URL</label>
+        </div>
+        <div class="text-center">
+          <button
+            id="addBtn"
+            disabled
+            class="btn btn-danger py-2 px-5 text-white font-pt-sans-caption"
+            onclick="addSite()"
+          >
+            Submit
+          </button>
+          <button
+            id="updateBtn"
+            class="btn btn-warning py-2 px-5 d-none font-pt-sans-caption"
+            onclick="finalUpdate()"
+          >
+            Edit Site
+          </button>
+        </div>
+      </div>
+      <hr />
+      <div class="w-75 mx-auto my-5">
+        <input
+          type="text"
+          oninput="searchSite()"
+          id="searchInput"
+          class="my-3 form-control"
+          placeholder="Site Search.."
+        />
+        <div id="sitesContainer">
+          <!-- Sites will be dynamically added here -->
+        </div>
+      </div>
+    </main>
+    <!-- JS FILES -->
+    <!-- bootstrap js -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- main js -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
